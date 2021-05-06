@@ -1,0 +1,17 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: auto;
+
+  .card__wrapper {
+    margin: 2px;
+    .card {
+      .card__image {
+        width: 400px;
+        height: 400px;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div class="search__container">
+    <h1>Search for a picture</h1>
+
+    <div class="search__wrapper">
+        <input type="search" class="search__input" #input placeholder="Search">
+    </div>
+
+    <div class="row">
+        <div class="card__wrapper" *ngFor="let photo of search">
+            <div class="card">
+                <img class="card__image" src="{{photo.url}}" />
+            </div>
+        </div>
+    </div>
+</div>

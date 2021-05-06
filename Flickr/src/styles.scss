@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+//Usually wanna make a seperate file for Scss variables / partials
+
+$primary-color: #4d4d4d;
+$secondary-color: white;
+
+body {
+  margin: 0;
+  font-size: 18px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: $primary-color;
+  padding: 1em 0;
+
+  a {
+    color: $secondary-color;
+    text-decoration: none;
+  }
+
+  a.logo {
+    font-weight: bold;
+    background-color: black;
+    padding: 0.25em 0.5em;
+  }
+
+  nav {
+    float: right;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      display: flex;
+
+      li a {
+        padding: 1em;
+        text-transform: uppercase;
+
+        &:hover {
+          background: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+}

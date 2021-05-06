@@ -1,0 +1,13 @@
+<div class="cat__container">
+    <h1>Pictures of cats!</h1>
+
+    <div class="row">
+        <div class="card__wrapper" *ngFor="let photo of photos">
+            <div class="card">
+                <img class="card__image" src="{{photo.url}}"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
