@@ -4,7 +4,8 @@ import { CatComponent } from './cat/cat.component';
 import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
-  { path: '', component: CatComponent },
+  { path: 'cat', component: CatComponent },
+  { path: '', redirectTo: 'cat', pathMatch: 'full' },
   { path: 'search', component: SearchComponent }
 ];
 

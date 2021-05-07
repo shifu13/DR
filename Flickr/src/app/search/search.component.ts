@@ -23,18 +23,21 @@ export class SearchComponent implements OnInit {
     this.search = [];
   }
 
+  //Debounce method
   ngAfterViewInit() {
-    this.ngzone.run( () => {
+    this.ngzone.run( () => { //
       this.keyupSub = fromEvent(this.inputElRef.nativeElement, 'keyup').pipe(
         debounceTime(1000),
-        distinctUntilChanged(),
-        tap(() => {
+        distinctUntilChanged(), //only emit when the current value is different than last
+        tap(() => { //used to observe the next input
           this.searchImg(this.inputElRef.nativeElement.value);
         })
-      ).subscribe()
+      ).subscribe() //stop receiving notifications
         
     });
   }
+  
+  //Lifecycle hook, used to cleanup, when an instance is destroyed
   ngOnDestroy() {
     this.keyupSub.unsubscribe(); //stopping to do event
   }
@@ -42,6 +45,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //SearchImg method
   searchImg(value: any) {
     const keyword = value.toLowerCase();
     this.flickrService.search(keyword)

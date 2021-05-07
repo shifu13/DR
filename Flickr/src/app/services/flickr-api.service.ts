@@ -37,7 +37,7 @@ export class FlickrService {
       .set('tags', 'cats')
       .set('format', 'json')
       .set('per_page', '9')
-      .set('nojsoncallback', '1');
+      .set('nojsoncallback', '1'); //fjerne jsonFlickrAPI funktion wrapper on response
     
     return this.http.get<FlickrOutput>(url, { params }).pipe( //observerables of FLickrOutput with url & params
       map((res: FlickrOutput): Photo[] => {

@@ -16,7 +16,7 @@ export class CatComponent implements OnInit {
 
   ngOnInit(): void {
     this.flickrService.getCat()
-      .toPromise()
+      .toPromise() //would be better to use observable, so its possible to cancel event.
       .then(res => {
         this.photos = res;
         console.log(this.photos);
